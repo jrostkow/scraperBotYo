@@ -11,7 +11,7 @@ echo "Enter your password at the prompt to install..."
 sudo apt-get install nodejs
 
 # Now npm should be available
-npm install phantomjs
+npm -g install phantomjs
 
 # blank line
 echo
