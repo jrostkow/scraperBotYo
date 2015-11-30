@@ -9,15 +9,14 @@ function pageLoaded(){
   console.log("\nYour snapshot is available in 'render.pdf'");
   
   // Instead of just rendering a pdf, you can extract specific text data with the following
-  var pageTitle = page.evaluate(function(){	// again another callback that is injected in the page
+  var r = page.evaluate(function(){	// again another callback that is injected in the page
       // Code in here is executed against the HTML of the page
-      return document.title;
-      // return document.getElementById('arbitraryID').innerHTML; // SPECIAL SAUCE
+      return $(".pl a")[0].innerHTML;
   });
-  console.log("Page title: "+pageTitle);
+  console.log("Result: "+r);
   
   phantom.exit(); // Nothing to do here! Terminate phantom (it doesn't assume you're done, unlike nodejs)
 }
 
 // Now actually load the page and give the pageLoaded function as a callback
-page.open("https://www.google.com",pageLoaded);
+page.open("https://detroit.craigslist.org/search/apa",pageLoaded);

@@ -8,10 +8,10 @@ set -e
 
 # First we need nodejs and npm, which help us get phantomjs
 echo "Enter your password at the prompt to install..."
-sudo apt-get install nodejs
+sudo apt-get install npm nodejs-legacy
 
 # Now npm should be available
-npm -g install phantomjs
+sudo npm -g install phantomjs
 
 # blank line
 echo
